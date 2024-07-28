@@ -1,3 +1,4 @@
+import Container from "@/components/common/container";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,5 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default function Offer() {
-  return <p>Offer</p>;
+  return (
+    <Container section>
+      <p>Offer</p>
+    </Container>
+  );
 }

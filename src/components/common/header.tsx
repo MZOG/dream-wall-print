@@ -39,12 +39,12 @@ export default function Header() {
     <header className="bg-white">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-5 border-b lg:border-none"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <Link href="/">
             <span className="sr-only">Your Company</span>
-            DRAM
+            DREAM
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -86,9 +86,9 @@ export default function Header() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-5 py-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white p-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link href="/">
               <span className="sr-only">DREAM Wall Print</span>
               DREAM
             </Link>

@@ -1,3 +1,9 @@
+import Container from "@/components/common/container";
+
 export default function Home() {
-  return <p>tutaj będzie najs</p>;
+  return (
+    <Container section>
+      <p>homepage</p>
+    </Container>
+  );
 }

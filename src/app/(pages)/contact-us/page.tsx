@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Container from "@/components/common/container";
 
 export const metadata: Metadata = {
   title: "Contact us",
@@ -6,5 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
-  return <p>Contact</p>;
+  return (
+    <Container section>
+      <p>Contact</p>
+    </Container>
+  );
 }

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <Container>
+    <Container section>
       <p>About us</p>
     </Container>
   );
