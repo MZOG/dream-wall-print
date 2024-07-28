@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-
+import Container from "@/components/common/container";
 export const metadata: Metadata = {
   title: "About us",
   description: "TODO",
 };
 
 export default function About() {
-  return <p>About us</p>;
+  return (
+    <Container>
+      <p>About us</p>
+    </Container>
+  );
 }
