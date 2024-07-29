@@ -1,5 +1,29 @@
 import Container from "@/components/common/container";
 import ContactForm from "@/components/common/contact-form";
+import Image from "next/image";
+import instagram from "../../../public/instagram.svg"
+import facebook from "../../../public/facebook.svg"
+import youtube from "../../../public/youtube.svg"
+import whatsapp from "../../../public/whatsapp.svg"
+
+const social = [
+    {
+        icon: facebook,
+        href: "#"
+    },
+    {
+        icon: instagram,
+        href: "#"
+    },
+    {
+        icon: youtube,
+        href: "#"
+    },
+    {
+        icon: whatsapp,
+        href: "#"
+    }
+]
 
 export default function Contact() {
     return (
@@ -19,10 +43,11 @@ export default function Contact() {
                         <a href="mailto:michal@dreamwallpaint.com" className="text-xl font-medium hover:underline underline-offset-4 hover:text-orange">michal@dreamwallpaint.com</a>
                     </div>
                     <div className="flex gap-5">
-                        <div className="size-10 bg-green-200"></div>
-                        <div className="size-10 bg-green-200"></div>
-                        <div className="size-10 bg-green-200"></div>
-                        <div className="size-10 bg-green-200"></div>
+                        {social.map((item, i) => (
+                            <a key={i} href={item.href}>
+                                <Image src={item.icon} alt={`social`} />
+                            </a>
+                        ))}
                     </div>
                 </div>
 
