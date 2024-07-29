@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster"
 
-import Header from "@/components/common/header";
+import dynamic from "next/dynamic";
+
+const DynamicHeader = dynamic(() => import("@/components/common/header"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <DynamicHeader />
         <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

@@ -39,7 +39,7 @@ export default function Header() {
     <header className="bg-white">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-5 border-b lg:border-none"
+        className="mx-auto flex max-w-6xl items-center justify-between p-5"
       >
         <div className="flex lg:flex-1">
           <Link href="/">
@@ -47,7 +47,7 @@ export default function Header() {
             DREAM
           </Link>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -57,45 +57,15 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          {navigation_items.map(({ title, href }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-sm font-medium leading-6 text-[#526077]"
-            >
-              {title}
-            </Link>
-          ))}
-        </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button asChild>
-            <Link
-              href="/free-quote"
-              className=" px-3 py-2 block text-base font-medium"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              Get a free quote
-            </Link>
-          </Button>
-        </div>
       </nav>
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden"
-      >
+      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white p-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <span className="sr-only">DREAM Wall Print</span>
-              DREAM
-            </Link>
+          <div className="flex items-center justify-end lg:justify-normal">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 lg:pl-[150px] rounded-md p-2.5 text-gray-700"
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />

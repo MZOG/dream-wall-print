@@ -1,9 +1,11 @@
-import Container from "@/components/common/container";
+import Contact from "@/components/homepage/contact";
 
 export default function Home() {
   return (
-    <Container section>
-      <p>homepage</p>
-    </Container>
+    <>
+        <p>hero</p>
+        <p>gallery</p>
+        <Contact />
+    </>
   );
 }

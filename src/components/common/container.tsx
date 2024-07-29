@@ -10,7 +10,7 @@ export default function Container({
   if (section) {
     return (
       <section
-        className={cn("px-5 mx-auto", width ? width : "max-w-7xl", className)}
+        className={cn("px-5 mx-auto", width ? width : "max-w-6xl", className)}
       >
         {children}
       </section>
@@ -18,7 +18,7 @@ export default function Container({
   }
 
   return (
-    <div className={cn("px-5 mx-auto", width ? width : "max-w-7xl", className)}>
+    <div className={cn("px-5 mx-auto", width ? width : "max-w-6xl", className)}>
       {children}
     </div>
   );
