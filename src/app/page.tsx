@@ -1,11 +1,13 @@
+import Hero from "@/components/homepage/hero";
 import Contact from "@/components/homepage/contact";
 
 export default function Home() {
   return (
-    <>
-        <p>hero</p>
-        <p>gallery</p>
-        <Contact />
-    </>
+      <>
+          <Hero/>
+          <p>offer</p>
+          <p>gallery</p>
+          <Contact/>
+      </>
   );
 }

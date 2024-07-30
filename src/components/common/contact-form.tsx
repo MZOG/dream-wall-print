@@ -1,5 +1,4 @@
 'use client'
-
 import {Input} from "@/components/ui/input";
 import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
@@ -14,7 +13,7 @@ export default function ContactForm() {
         reset,
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors  },
     } = useForm({
         defaultValues: {
             name: '',
@@ -38,7 +37,7 @@ export default function ContactForm() {
             if (response.status === 200) {
                 reset();
                 toast({
-                    title: "Poszło",
+                    title: "Success",
                     description: "Your message has been sent.",
                 })
             }
@@ -46,25 +45,29 @@ export default function ContactForm() {
             reset();
             toast({
                 variant: "destructive",
-                title: "UPS",
-                description: "Sorry something went wrong.",
+                title: "Error",
+                description: "Sorry something went wrong. Try again.",
             })
         })
     }
+
+    const isSub = true;
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
             <div className="flex flex-col sm:flex-row gap-5">
                 <div>
-                    <Input type="text" placeholder="Full name *" {...register("name", { required: true })}/>
+                    <Input className="rounded-none ring-primary ring-1" type="text"
+                           placeholder="Full name *" {...register("name", {required: true})}/>
                     {errors.name && (
                         <span className="text-red-400 font-medium text-xs">
-            This field is required
-          </span>
+                            This field is required
+                          </span>
                     )}
                 </div>
                 <div>
-                    <Input type="email" placeholder="E-mail *" {...register("email", { required: true })}/>
+                    <Input className="rounded-none ring-primary ring-1" type="email"
+                           placeholder="E-mail *" {...register("email", {required: true})}/>
                     {errors.name && (
                         <span className="text-red-400 font-medium text-xs">
                         This field is required
@@ -72,8 +75,10 @@ export default function ContactForm() {
                     )}
                 </div>
             </div>
-            <Textarea placeholder="Your message" {...register("message")} />
-            <Button type="submit" className="self-start">Send</Button>
+            <Textarea className="rounded-none ring-primary ring-1"
+                      placeholder="Your message" {...register("message")} />
+
+            <Button type="submit" className="self-start disabled:cursor-not-allowed" variant="secondary">Submit</Button>
         </form>
     )
 }

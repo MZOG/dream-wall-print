@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
     const transport = nodemailer.createTransport({
         host: "smtp.gmail.com",
-        secure: false,
+        secure: true,
         port: 465,
         authMethod: "LOGIN",
         auth: {
@@ -17,8 +17,8 @@ export async function POST(request: NextRequest) {
     })
 
     const mailOptions = {
-        from: process.env.MY_EMAIL,
-        to: process.env.MY_EMAIL,
+        from: "no-reply@dreamwallprint.com",
+        to: process.env.EMAIL,
         cc: email,
         subject: `Message from ${name}`,
         html: `

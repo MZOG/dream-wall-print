@@ -9,6 +9,8 @@ const DynamicHeader = dynamic(() => import("@/components/common/header"), {
   loading: () => <p>Loading...</p>,
 });
 
+import CookieBanner from "@/components/cookie-banner";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -29,6 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <DynamicHeader />
         <main>{children}</main>
+        <CookieBanner />
         <Toaster />
       </body>
     </html>
