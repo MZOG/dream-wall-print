@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        evermore: ['var(--font-evermore)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

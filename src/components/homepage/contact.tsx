@@ -32,10 +32,10 @@ const social = [
 
 export default function Contact() {
     return (
-        <Container full className="bg-black py-10 ">
-            <h2 className="text-4xl max-w-4xl mx-auto text-white mb-12">Contact us</h2>
+        <Container full className="bg-black py-10" width="max-w-5xl">
+            <h2 className="text-4xl mx-auto text-white mb-12 font-evermore">Contact us</h2>
 
-            <div className="grid md:grid-cols-2 items-center gap-10 text-white max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 items-center gap-10 text-white mx-auto">
                 <div className="space-y-5">
                     <Image src={contactUsLogo} alt="Contact Us" />
 

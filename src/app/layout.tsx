@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
@@ -12,6 +13,12 @@ const DynamicHeader = dynamic(() => import("@/components/common/header"), {
 import CookieBanner from "@/components/cookie-banner";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const evermore = localFont({
+  src: '../../public/fonts/evermore.otf',
+  display: 'swap',
+  variable: '--font-evermore',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${evermore.variable}`}>
         <DynamicHeader />
         <main>{children}</main>
         <CookieBanner />
