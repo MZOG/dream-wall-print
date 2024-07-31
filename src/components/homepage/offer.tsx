@@ -52,16 +52,66 @@ export default function Offer() {
 
             <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">Our offer</h2>
 
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-3 mt-10">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-3 mt-10 mb-20">
                 {offer_items.map((offer) => (
                     <div key={offer.id} className="bg-white px-5 py-10 space-y-4">
-                        <h3 className="text-orange md:text-xl" dangerouslySetInnerHTML={{ __html: offer.title }} />
+                        <h3 className="text-orange md:text-xl" dangerouslySetInnerHTML={{__html: offer.title}}/>
 
                         <p>
                             {offer.description}
                         </p>
                     </div>
                 ))}
+            </div>
+
+            <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">How our service works</h2>
+
+            <div className="space-y-14 my-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between text-white">
+                    <div className="relative">
+                        <h3 className="text-2xl font-medium">Consultation and design</h3>
+                        <p className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">1</p>
+                    </div>
+                    <p>We start with a consultation to understand the client&apos;s vision and needs. Then we create a
+                        graphic design tailored to individual requirements.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between text-white">
+                    <div className="relative">
+                        <h3 className="text-2xl font-medium">Printing</h3>
+                        <p className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">2</p>
+                    </div>
+                    <p>We start with a consultation to understand the client&apos;s vision and needs. Then we create a
+                        graphic design tailored to individual requirements.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between text-white">
+                    <div className="relative">
+                        <h3 className="text-2xl font-medium">Finalization</h3>
+                        <p className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">3</p>
+                    </div>
+                    <p>We start with a consultation to understand the client&apos;s vision and needs. Then we create a
+                        graphic design tailored to individual requirements.</p>
+                </div>
+            </div>
+
+            <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">Contact us</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-white pt-10">
+                <p>If you want to learn more about our services or discuss your project details, feel free to contact us:</p>
+
+                <div>
+                    <div>
+                        <p className="text-sm">Call</p>
+                        <a href="tel:+447459073560"
+                           className="text-xl hover:underline underline-offset-4 hover:text-black">+44 7459 073560</a>
+                    </div>
+                    <div>
+                        <p className="text-sm">Email</p>
+                        <a href="mailto:contact@dreamwallpaint.com"
+                           className="text-xl hover:underline underline-offset-4 hover:text-black">contact@dreamwallpaint.com</a>
+                    </div>
+                </div>
             </div>
         </Container>
     )
