@@ -3,7 +3,7 @@ export default function Hero() {
         <section className="relative">
             {/*video*/}
             <video autoPlay={true} loop muted className="hero-video">
-                <source src="../../../public/dream-video.mp4" type="video/mp4"/>
+                <source src="/public/dream-video.mp4" type="video/mp4"/>
             </video>
 
             <div className="md:absolute bg-gradient-to-t from-primary to-transparent top-0 left-0 w-full h-full"></div>
