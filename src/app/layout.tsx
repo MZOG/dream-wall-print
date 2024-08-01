@@ -9,6 +9,9 @@ import dynamic from "next/dynamic";
 const DynamicHeader = dynamic(() => import("@/components/common/header"), {
   loading: () => <p>Loading...</p>,
 });
+const DynamicFooter = dynamic(() => import("@/components/common/footer"), {
+  loading: () => <p>Loading...</p>,
+})
 
 import CookieBanner from "@/components/cookie-banner";
 
@@ -38,6 +41,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${evermore.variable}`}>
         <DynamicHeader />
         <main>{children}</main>
+        <DynamicFooter />
         <CookieBanner />
         <Toaster />
       </body>
