@@ -32,7 +32,7 @@ export default function CookieBanner() {
     if (!showBanner) return;
 
     return (
-        <Card className="fixed right-5 bottom-5 max-w-sm p-3">
+        <Card className="fixed left-5 md:left-auto right-5 bottom-5 max-w-sm p-3">
 
             <p className="text-xs">We use cookies to improve your experience. By using our site, you agree to our use of cookies.
             </p>

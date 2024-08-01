@@ -41,7 +41,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/">
             <span className="sr-only">Your Company</span>
-            <Image src={Logo} alt="Dream Wall Print"/>
+            <Image src={Logo} alt="Dream Wall Print" />
           </Link>
         </div>
         <div className="flex lg:hidden">
