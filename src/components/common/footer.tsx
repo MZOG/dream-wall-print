@@ -74,7 +74,7 @@ export default function Footer() {
                         </Link>
                     </li>
                     <li className="py-2">
-                        <Link href="/terms" className="hover:underline underline-offset-4 hover:text-orange">
+                        <Link href="/privacy-policy" className="hover:underline underline-offset-4 hover:text-orange">
                             Privacy Policy
                         </Link>
                     </li>

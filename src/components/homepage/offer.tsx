@@ -65,7 +65,7 @@ export default function Offer() {
             <h2 className="text-2xl md:text-4xl mx-auto text-white font-evermore leading-relaxed">How our service works</h2>
 
             <div className="space-y-14 my-20">
-                <div className="grid grid-cols-1 gap-3 md:grid-cols-2 items-center justify-between text-white">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between text-white">
                     <div className="relative">
                         <h3 className="text-2xl font-medium">Consultation and design</h3>
                         <p className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">1</p>

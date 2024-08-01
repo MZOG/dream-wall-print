@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function Offer() {
   return (
-    <Container section>
-      <p>Offer</p>
-    </Container>
+      <Container section className="py-10 md:py-20">
+        <h1 className="text-3xl md:text-4xl font-semibold">Offer</h1>
+      </Container>
   );
 }

@@ -32,7 +32,7 @@ const social = [
 
 export default function Contact() {
     return (
-        <Container full className="bg-black py-10" width="max-w-5xl">
+        <Container full fullClassName="bg-black py-10 md:py-20" width="max-w-5xl">
             <h2 className="text-2xl md:text-4xl mx-auto text-white mb-12 font-evermore">Contact us</h2>
 
             <div className="grid md:grid-cols-2 items-center gap-10 text-white mx-auto">

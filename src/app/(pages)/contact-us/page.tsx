@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <Container section>
-      <p>Contact</p>
-    </Container>
+      <Container section className="py-10 md:py-20">
+        <h1 className="text-3xl md:text-4xl font-semibold">Contact us</h1>
+      </Container>
   );
 }

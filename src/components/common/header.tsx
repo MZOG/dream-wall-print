@@ -101,11 +101,11 @@ export default function Header() {
                   +44 7459 073560
                 </a>
                 <a
-                  href="mailto:sales@dreamwallprint.com"
+                  href="mailto:contact@dreamwallprint.com"
                   className="flex gap-3 text-base text-white font-medium -mx-3 px-3 py-2"
                 >
                   <EnvelopeIcon width={24} />
-                  sales@dreamwallprint.com
+                  contact@dreamwallprint.com
                 </a>
                 {/*<a*/}
                 {/*  href="mailto:sales@dreamwallprint.com"*/}
