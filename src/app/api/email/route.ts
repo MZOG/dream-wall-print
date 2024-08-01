@@ -6,17 +6,17 @@ export async function POST(request: NextRequest) {
     const { name, email, message } = await request.json();
 
     const transport = nodemailer.createTransport({
-        host: "smtp.gmail.com",
+        host: "smtp.mail.ovh.ca",
         secure: true,
         port: 465,
-        authMethod: "LOGIN",
+        authMethod: "NORMAL PASSWORD",
         auth: {
             user: process.env.EMAIL,
-            pass: process.env.EMAIL_PASS
+            pass: process.env.EMAIL_PASSWORD
         }
     })
 
-    const mailOptions = {
+    const mailOptions: Mail.Options = {
         from: "no-reply@dreamwallprint.com",
         to: process.env.EMAIL,
         cc: email,
@@ -29,22 +29,21 @@ export async function POST(request: NextRequest) {
         `
     }
 
-    const sendMailPromise = async () => {
+    const sendMailPromise = () =>
         new Promise<string>((resolve, reject) => {
             transport.sendMail(mailOptions, function (err) {
                 if (!err) {
-                    resolve("Email sent successfully");
+                    resolve("Email sent");
                 } else {
-                    reject(err.message)
+                    reject(err.message);
                 }
-            })
-        })
+            });
+        });
 
-        try {
-            await sendMailPromise();
-            return NextResponse.json({message: "Email sent successfully"});
-        } catch (err) {
-            return NextResponse.json({error: err}, {status: 500});
-        }
+    try {
+        await sendMailPromise();
+        return NextResponse.json({ message: "Email sent" });
+    } catch (err) {
+        return NextResponse.json({ error: err }, { status: 500 });
     }
 }

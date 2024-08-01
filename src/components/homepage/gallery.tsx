@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function Gallery() {
     return (
         <Container section className="my-10 lg:my-20" width="max-w-5xl">
-            <h2 className="text-4xl mx-auto text-orange mb-12 font-evermore">Gallery</h2>
+            <h2 className="text-2xl md:text-4xl mx-auto text-orange mb-12 font-evermore">Gallery</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <Image src={image1} alt="image 1" />

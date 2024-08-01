@@ -33,7 +33,7 @@ const social = [
 export default function Contact() {
     return (
         <Container full className="bg-black py-10" width="max-w-5xl">
-            <h2 className="text-4xl mx-auto text-white mb-12 font-evermore">Contact us</h2>
+            <h2 className="text-2xl md:text-4xl mx-auto text-white mb-12 font-evermore">Contact us</h2>
 
             <div className="grid md:grid-cols-2 items-center gap-10 text-white mx-auto">
                 <div className="space-y-5">
@@ -47,7 +47,7 @@ export default function Contact() {
                         <p className="text-sm text-gray-400">Email</p>
                         <a href="mailto:contact@dreamwallpaint.com" className="text-xl hover:underline underline-offset-4 hover:text-orange">contact@dreamwallpaint.com</a>
                     </div>
-                    <div className="flex gap-5">
+                    <div className="hidden flex gap-5">
                         {social.map((item, i) => (
                             <a key={i} href={item.href}>
                                 <Image src={item.icon} alt={item.name} />

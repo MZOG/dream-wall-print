@@ -6,7 +6,8 @@ export default function Container({
   width,
   className,
   children,
-  full
+  full,
+  fullClassName
 }: ContainerProps) {
   if (section) {
     return (
@@ -20,7 +21,7 @@ export default function Container({
 
   if (full) {
     return (
-        <section className={className}>
+        <section className={fullClassName}>
           <div className={cn("px-5 mx-auto", width ? width : "max-w-6xl", className)}>
             {children}
           </div>

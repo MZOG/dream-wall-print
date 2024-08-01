@@ -30,11 +30,11 @@ const offer_items = [
 const services = ['Bricks walls', 'Glass', 'Concrete', 'Wood', 'Plaster', 'Tiles']
 export default function Offer() {
     return (
-        <Container full width="max-w-5xl" className="bg-orange py-10">
-            <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">Professional wall printing
+        <Container full width="max-w-5xl" fullClassName="bg-orange py-10 md:py-20">
+            <h2 className="text-2xl md:text-4xl mx-auto text-white font-evermore">Professional wall printing
                 services</h2>
 
-            <div className="flex flex-col md:flex-row justify-between items-center gap-5 my-10">
+            <div className="flex flex-col md:flex-row justify-between md:items-center gap-5 my-10">
                 <p className="text-white text-lg max-w-xl">
                     Dream Wall Print offers innovative and advanced wall printing services using state-of-the-art
                     technology to create high-quality, durable graphics directly on walls. Our unique wall printing
@@ -43,19 +43,17 @@ export default function Offer() {
 
                 <ul className="columns-2 text-white text-lg">
                     {services.map(service => (
-                        <li key={service} className="px-5 py-3">{service}</li>
+                        <li key={service} className="md:px-5 py-3">{service}</li>
                     ))}
                 </ul>
-
-
             </div>
 
-            <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">Our offer</h2>
+            <h2 className="text-2xl md:text-4xl mx-auto text-white font-evermore leading-relaxed">Our offer</h2>
 
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3 mt-10 mb-20">
                 {offer_items.map((offer) => (
                     <div key={offer.id} className="bg-white px-5 py-10 space-y-4">
-                        <h3 className="text-orange md:text-xl" dangerouslySetInnerHTML={{__html: offer.title}}/>
+                        <h3 className="text-orange font-medium text-xl" dangerouslySetInnerHTML={{__html: offer.title}}/>
 
                         <p>
                             {offer.description}
@@ -64,10 +62,10 @@ export default function Offer() {
                 ))}
             </div>
 
-            <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">How our service works</h2>
+            <h2 className="text-2xl md:text-4xl mx-auto text-white font-evermore leading-relaxed">How our service works</h2>
 
             <div className="space-y-14 my-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between text-white">
+                <div className="grid grid-cols-1 gap-3 md:grid-cols-2 items-center justify-between text-white">
                     <div className="relative">
                         <h3 className="text-2xl font-medium">Consultation and design</h3>
                         <p className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">1</p>
@@ -95,12 +93,12 @@ export default function Offer() {
                 </div>
             </div>
 
-            <h2 className="text-4xl mx-auto text-white font-evermore leading-relaxed">Contact us</h2>
+            <h2 className="text-2xl md:text-4xl mx-auto text-white font-evermore leading-relaxed">Contact us</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-white pt-10">
                 <p>If you want to learn more about our services or discuss your project details, feel free to contact us:</p>
 
-                <div>
+                <div className="space-y-4">
                     <div>
                         <p className="text-sm">Call</p>
                         <a href="tel:+447459073560"
