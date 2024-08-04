@@ -1,4 +1,4 @@
 export type GalleryProps = {
-    items: number;
-    photos: string[];
+  items: number;
+  photos: string[];
 }

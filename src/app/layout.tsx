@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import {Inter} from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster"
+import {Toaster} from "@/components/ui/toaster"
 
 import dynamic from "next/dynamic";
+import CookieBanner from "@/components/cookie-banner";
 
 const DynamicHeader = dynamic(() => import("@/components/common/header"), {
   loading: () => <p>Loading...</p>,
@@ -13,9 +14,7 @@ const DynamicFooter = dynamic(() => import("@/components/common/footer"), {
   loading: () => <p>Loading...</p>,
 })
 
-import CookieBanner from "@/components/cookie-banner";
-
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({subsets: ["latin"]});
 
 const evermore = localFont({
   src: '../../public/fonts/evermore.otf',
@@ -32,19 +31,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${evermore.variable}`}>
-        <DynamicHeader />
-        <main>{children}</main>
-        <DynamicFooter />
-        <CookieBanner />
-        <Toaster />
-      </body>
+    <body className={`${inter.className} ${evermore.variable}`}>
+    <DynamicHeader/>
+    <main>{children}</main>
+    <DynamicFooter/>
+    <CookieBanner/>
+    <Toaster/>
+    </body>
     </html>
   );
 }

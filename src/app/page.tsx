@@ -6,12 +6,12 @@ import About from "@/components/homepage/about";
 
 export default function Home() {
   return (
-      <>
-          <Hero/>
-          <About />
-          <Offer />
-          <Gallery />
-          <Contact/>
-      </>
+    <>
+      <Hero/>
+      <About/>
+      <Offer/>
+      <Gallery/>
+      <Contact/>
+    </>
   );
 }

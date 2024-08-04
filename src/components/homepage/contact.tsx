@@ -8,59 +8,61 @@ import whatsapp from "../../../public/whatsapp.svg"
 import contactUsLogo from "../../../public/contact-us-logo.svg"
 
 const social = [
-    {
-        name: "DREAM Wall Paint - Facebook",
-        icon: facebook,
-        href: "#"
-    },
-    {
-        name: "DREAM Wall Paint - Instagram",
-        icon: instagram,
-        href: "#"
-    },
-    {
-        name: "DREAM Wall Paint - YouTube",
-        icon: youtube,
-        href: "#"
-    },
-    {
-        name: "DREAM Wall Paint - WhatsApp",
-        icon: whatsapp,
-        href: "#"
-    }
+  {
+    name: "DREAM Wall Paint - Facebook",
+    icon: facebook,
+    href: "#"
+  },
+  {
+    name: "DREAM Wall Paint - Instagram",
+    icon: instagram,
+    href: "#"
+  },
+  {
+    name: "DREAM Wall Paint - YouTube",
+    icon: youtube,
+    href: "#"
+  },
+  {
+    name: "DREAM Wall Paint - WhatsApp",
+    icon: whatsapp,
+    href: "#"
+  }
 ]
 
 export default function Contact() {
-    return (
-        <Container full fullClassName="bg-black py-10 md:py-20" width="max-w-5xl">
-            <h2 className="text-2xl md:text-4xl mx-auto text-white mb-12 font-evermore">Contact us</h2>
+  return (
+    <Container full fullClassName="bg-black py-10 md:py-20" width="max-w-5xl">
+      <h2 className="text-2xl md:text-4xl mx-auto text-white mb-12 font-evermore">Contact us</h2>
 
-            <div className="grid md:grid-cols-2 items-center gap-10 text-white mx-auto">
-                <div className="space-y-5">
-                    <Image src={contactUsLogo} alt="Contact Us" />
+      <div className="grid md:grid-cols-2 items-center gap-10 text-white mx-auto">
+        <div className="space-y-5">
+          <Image src={contactUsLogo} alt="Contact Us"/>
 
-                    <div>
-                        <p className="text-sm text-gray-400">Call</p>
-                        <a href="tel:+447459073560" className="text-xl hover:underline underline-offset-4 hover:text-orange">+44 7459 073560</a>
-                    </div>
-                    <div>
-                        <p className="text-sm text-gray-400">Email</p>
-                        <a href="mailto:contact@dreamwallpaint.com" className="text-xl hover:underline underline-offset-4 hover:text-orange">contact@dreamwallpaint.com</a>
-                    </div>
-                    <div className="hidden flex gap-5">
-                        {social.map((item, i) => (
-                            <a key={i} href={item.href}>
-                                <Image src={item.icon} alt={item.name} />
-                            </a>
-                        ))}
-                    </div>
-                </div>
+          <div>
+            <p className="text-sm text-gray-400">Call</p>
+            <a href="tel:+447459073560" className="text-xl hover:underline underline-offset-4 hover:text-orange">+44
+              7459 073560</a>
+          </div>
+          <div>
+            <p className="text-sm text-gray-400">Email</p>
+            <a href="mailto:contact@dreamwallpaint.com"
+               className="text-xl hover:underline underline-offset-4 hover:text-orange">contact@dreamwallpaint.com</a>
+          </div>
+          <div className="hidden gap-5">
+            {social.map((item, i) => (
+              <a key={i} href={item.href}>
+                <Image src={item.icon} alt={item.name}/>
+              </a>
+            ))}
+          </div>
+        </div>
 
-                <div className="bg-white text-primary p-5">
-                    <p className="font-medium mb-5">Send message</p>
-                    <ContactForm />
-                </div>
-            </div>
-        </Container>
-    )
+        <div className="bg-white text-black p-5">
+          <p className="font-medium mb-5">Send message</p>
+          <ContactForm/>
+        </div>
+      </div>
+    </Container>
+  )
 }

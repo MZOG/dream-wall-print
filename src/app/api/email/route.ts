@@ -1,49 +1,23 @@
-import { type NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-import Mail from "nodemailer/lib/mailer";
+import {EmailTemplate} from "@/components/email-template";
+import {Resend} from 'resend';
 
-export async function POST(request: NextRequest) {
-    const { name, email, message } = await request.json();
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const transport = nodemailer.createTransport({
-        host: "smtp.mail.ovh.ca",
-        secure: true,
-        port: 465,
-        authMethod: "NORMAL PASSWORD",
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.EMAIL_PASSWORD
-        }
-    })
+export async function POST() {
+  try {
+    const {data, error} = await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
+      to: ['delivered@resend.dev'],
+      subject: 'Hello world',
+      react: EmailTemplate({fullName: 'John'}),
+    });
 
-    const mailOptions: Mail.Options = {
-        from: "no-reply@dreamwallprint.com",
-        to: process.env.EMAIL,
-        cc: email,
-        subject: `Message from ${name}`,
-        html: `
-        <div>
-            <p>Full name:<br><span style="font-weight:600">${name}</span></p>
-            <p>Message:<br><span style="font-weight:600">${message}</span></p>
-        </div>
-        `
+    if (error) {
+      return Response.json({error}, {status: 500});
     }
 
-    const sendMailPromise = () =>
-        new Promise<string>((resolve, reject) => {
-            transport.sendMail(mailOptions, function (err) {
-                if (!err) {
-                    resolve("Email sent");
-                } else {
-                    reject(err.message);
-                }
-            });
-        });
-
-    try {
-        await sendMailPromise();
-        return NextResponse.json({ message: "Email sent" });
-    } catch (err) {
-        return NextResponse.json({ error: err }, { status: 500 });
-    }
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({error}, {status: 500});
+  }
 }
