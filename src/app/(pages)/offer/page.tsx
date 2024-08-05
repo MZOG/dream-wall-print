@@ -3,7 +3,7 @@ import type {Metadata} from "next";
 
 export const metadata: Metadata = {
   title: "Offer",
-  description: "TODO",
+  description: "Dream Wall Print offers innovative and advanced wall printing services using state-of-the-art technology to create high-quality, durable graphics directly on walls.",
 };
 
 export default function Offer() {

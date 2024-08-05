@@ -81,8 +81,7 @@ export default function Offer() {
             <p
               className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">2</p>
           </div>
-          <p>We start with a consultation to understand the client&apos;s vision and needs. Then we create a
-            graphic design tailored to individual requirements.</p>
+          <p>Our advanced machine prints the selected graphic directly on the wall, ensuring precise and durable results.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between text-white">
@@ -91,8 +90,7 @@ export default function Offer() {
             <p
               className="font-evermore leading-none text-[60px] absolute top-1/2 transform -translate-y-1/2 left-10 opacity-20">3</p>
           </div>
-          <p>We start with a consultation to understand the client&apos;s vision and needs. Then we create a
-            graphic design tailored to individual requirements.</p>
+          <p>After printing, we ensure that the end result meets the client&apos;s expectations.</p>
         </div>
       </div>
 
