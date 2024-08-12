@@ -1,6 +1,6 @@
 'use client'
 import 'photoswipe/dist/photoswipe.css'
-import { Gallery, Item } from 'react-photoswipe-gallery'
+import {Gallery, Item} from 'react-photoswipe-gallery'
 import Image from "next/image";
 
 import image1 from "../../public/gallery/1.webp";
@@ -17,9 +17,6 @@ import image10 from "../../public/gallery/10.webp";
 const GalleryImages = [
   {
     image: image1,
-  },
-  {
-    image: image2,
   },
   {
     image: image2,
@@ -62,8 +59,9 @@ const MyGallery = () => (
           width={image.image.width}
           height={image.image.height}
         >
-          {({ ref, open }) => (
-            <Image className="hover:cursor-pointer" ref={ref} onClick={open} width={image.image.width} height={image.image.height} src={image.image.src} alt="elo" />
+          {({ref, open}) => (
+            <Image className="hover:cursor-pointer" ref={ref} onClick={open} width={image.image.width}
+                   height={image.image.height} src={image.image.src} alt="elo"/>
           )}
         </Item>
       ))}

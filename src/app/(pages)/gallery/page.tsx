@@ -1,5 +1,5 @@
 import Container from "@/components/common/container";
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import MyGallery from "@/components/gallery-lightbox";
 
 export const metadata: Metadata = {

@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import CookieBanner from "@/components/cookie-banner";
 
 import ogImage from "../../public/open-graph.jpg"
+import React from "react";
 
 const DynamicHeader = dynamic(() => import("@/components/common/header"), {
   loading: () => <p>Loading...</p>,
@@ -41,9 +42,7 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
+export default function RootLayout({children}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
