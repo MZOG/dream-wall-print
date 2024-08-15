@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import MyGallery from "@/components/gallery-lightbox";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dreamwallprint.com"),
   title: "Gallery",
-  description: "TODdO",
+  description: "We ensure that the end result meets the client's expectations.",
 };
 
 export default function Gallery() {

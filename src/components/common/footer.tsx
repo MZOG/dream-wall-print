@@ -31,6 +31,21 @@ const social = [
   },
 ];
 
+const footerLinks = [
+  {
+    name: "Offer",
+    href: "/offer",
+  },
+  {
+    name: "Gallery",
+    href: "/gallery",
+  },
+  {
+    name: "Contact",
+    href: "/contact-us",
+  },
+];
+
 export default function Footer() {
   return (
     <Container
@@ -61,7 +76,7 @@ export default function Footer() {
             contact@dreamwallprint.com
           </a>
         </div>
-        <div className="hidden flex md:justify-between gap-5">
+        <div className="hidden md:justify-between gap-5">
           {social.map((item, i) => (
             <a key={i} href={item.href}>
               <Image src={item.icon} alt={item.name} />
@@ -71,39 +86,17 @@ export default function Footer() {
       </div>
 
       <div>
-        <ul className="md:columns-2 md:text-lg font-medium">
-          <li className="py-2">
-            <Link
-              href="/offer"
-              className="hover:underline underline-offset-4 hover:text-orange"
-            >
-              Offer
-            </Link>
-          </li>
-          <li className="py-2">
-            <Link
-              href="/gallery"
-              className="hover:underline underline-offset-4 hover:text-orange"
-            >
-              Gallery
-            </Link>
-          </li>
-          <li className="py-2">
-            <Link
-              href="/contact-us"
-              className="hover:underline underline-offset-4 hover:text-orange"
-            >
-              Contact
-            </Link>
-          </li>
-          <li className="py-2">
-            <Link
-              href="/privacy-policy"
-              className="hover:underline underline-offset-4 hover:text-orange"
-            >
-              Privacy Policy
-            </Link>
-          </li>
+        <ul className="md:columns-3 md:text-lg font-medium">
+          {footerLinks.map((link) => (
+            <li className="py-2" key={link.name}>
+              <Link
+                href={link.href}
+                className="hover:underline underline-offset-4 hover:text-orange"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <a

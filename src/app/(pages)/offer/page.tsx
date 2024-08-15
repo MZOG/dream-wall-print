@@ -3,6 +3,7 @@ import Container from "@/components/common/container";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dreamwallprint.com"),
   title: "Offer",
   description:
     "We are pleased to present the offer of Dream Wall Print, a company specializing in creating unique wall graphics using innovative technology.",
