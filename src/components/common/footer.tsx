@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       <div>
-        <ul className="md:columns-3 md:text-lg font-medium">
+        <ul className="md:flex gap-5 md:text-lg font-medium">
           {footerLinks.map((link) => (
             <li className="py-2" key={link.name}>
               <Link

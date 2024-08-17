@@ -1,42 +1,42 @@
-"use server"
-import {Resend} from "resend"
-import {EmailTemplate} from "@/components/email-template";
+"use server";
+import { Resend } from "resend";
+import { EmailTemplate } from "@/components/email-template";
 
 interface State {
-  error: string | null
-  success: boolean
+  error: string | null;
+  success: boolean;
 }
 
 export const sendEmail = async (prevState: State, formData: FormData) => {
-  const fullName = formData.get("name") as string
-  const email = formData.get("email") as string
-  const message = formData.get("message") as string
+  const fullName = formData.get("name") as string;
+  const email = formData.get("email") as string;
+  const message = formData.get("message") as string;
 
   if (fullName === "" || email === "" || message === "") {
     return {
       error: "error",
       success: false,
-    }
+    };
   }
-
 
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY)
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "Office <contact@dreamwallprint.com>",
-      to: email,
+      to: "Office <contact@dreamwallprint.com>",
+      cc: email,
       subject: "Form Submission",
-      react: EmailTemplate({fullName, email, message})
-    })
+      react: EmailTemplate({ fullName, email, message }),
+    });
     return {
       error: null,
-      success: true
-    }
+      success: true,
+    };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return {
       error: (error as Error).message,
-      success: false
-    }
+      success: false,
+    };
   }
-}
+};
