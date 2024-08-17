@@ -22,9 +22,9 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: `${fullName} <${email}>`,
+      from: "Dream Wall Print <contact@dreamwallprint.com>",
       to: "Dream Wall Print <contact@dreamwallprint.com>",
-      cc: "Dream Wall Print <contact@dreamwallprint.com>",
+      reply_to: `${fullName} <${email}>`,
       subject: `Form Submission - ${fullName}`,
       react: EmailTemplate({ fullName, email, message }),
     });
