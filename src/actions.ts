@@ -24,6 +24,7 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
     await resend.emails.send({
       from: `${fullName} <${email}>`,
       to: "Dream Wall Print <contact@dreamwallprint.com>",
+      cc: "Dream Wall Print <contact@dreamwallprint.com>",
       subject: `Form Submission - ${fullName}`,
       react: EmailTemplate({ fullName, email, message }),
     });
